@@ -17,7 +17,7 @@ jobs:
         run: chmod +x ./gradlew
 
       - name: Build APK
-        run: ./gradlew :app:assembleFreeDebug --stacktrace
+        run: ./gradlew :lemuroid-app:assembleFreeDebug --stacktrace
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
