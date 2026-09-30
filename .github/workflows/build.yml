@@ -13,9 +13,9 @@ jobs:
           java-version: '17'
       - uses: android-actions/setup-android@v3
       - name: Build APK
-        run: ./gradlew :lemuroid-app:assembleFreeBundleDebug
+        run: ./gradlew assembleFreeDebug --stacktrace
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
           name: my-lemuroid-apk
-          path: lemuroid-app/build/outputs/apk/freeBundle/debug/*.apk
+          path: "**/build/outputs/apk/**/*.apk"
