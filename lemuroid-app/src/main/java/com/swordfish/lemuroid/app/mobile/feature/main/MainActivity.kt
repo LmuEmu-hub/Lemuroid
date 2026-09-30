@@ -186,9 +186,9 @@ class MainActivity : RetrogradeComponentActivity(), BusyActivity {
                 NavHost(
                     modifier = Modifier.fillMaxSize(),
                     navController = navController,
-                    startDestination = MainRoute.HOME.route,
+                    startDestination = MainRoute.SYSTEM.route,
                 ) {
-                    composable(MainRoute.HOME) {
+                    {
                         HomeScreen(
                             modifier = Modifier.padding(padding),
                             viewModel =
