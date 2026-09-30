@@ -12,10 +12,10 @@ jobs:
           distribution: 'temurin'
           java-version: '17'
       - uses: android-actions/setup-android@v3
-      - name: Build APK
-        run: ./gradlew assembleFreeDebug --stacktrace
+      - name: Build Free Bundle Debug
+        run: ./gradlew :lemuroid-app:assembleFreeBundleDebug --no-daemon
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
           name: my-lemuroid-apk
-          path: "**/build/outputs/apk/**/*.apk"
+          path: lemuroid-app/build/outputs/apk/freeBundle/debug/*.apk
