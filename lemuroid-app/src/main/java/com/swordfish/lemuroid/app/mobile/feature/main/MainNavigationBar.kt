@@ -34,7 +34,8 @@ private fun LemuroidNavigationBar(
     navController: NavHostController,
 ) {
     NavigationBar(modifier = Modifier.fillMaxWidth()) {
-        MainNavigationRoutes.values().forEach { destination ->
+        // 【關鍵修改】過濾掉 HOME 選單，底部列就不會顯示「首頁」
+        MainNavigationRoutes.values().filter { it.route != MainRoute.HOME }.forEach { destination ->
             val isSelected = currentRoute?.root == destination.route
             val iconDrawable = if (isSelected) destination.selectedIcon else destination.unselectedIcon
 
