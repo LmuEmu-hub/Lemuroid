@@ -134,7 +134,7 @@ class MainActivity : RetrogradeComponentActivity(), BusyActivity {
             val currentRoute =
                 currentDestination?.route
                     ?.let { MainRoute.findByRoute(it) }
-                    ?: MainRoute.HOME
+                    ?: MainRoute.SYSTEMS
 
             val infoDialogDisplayed =
                 remember {
@@ -186,9 +186,9 @@ class MainActivity : RetrogradeComponentActivity(), BusyActivity {
                 NavHost(
                     modifier = Modifier.fillMaxSize(),
                     navController = navController,
-                    startDestination = MainRoute.HOME.route,
+                    startDestination = MainRoute.SYSTEMS.route,
                 ) {
-                     composable(MainRoute.HOME)  {
+                    composable(MainRoute.HOME) {
                         HomeScreen(
                             modifier = Modifier.padding(padding),
                             viewModel =
